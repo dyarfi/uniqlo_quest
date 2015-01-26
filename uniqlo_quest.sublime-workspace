@@ -1,0 +1,935 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"base",
+				"base64_encode"
+			],
+			[
+				"galler",
+				"gallery_model"
+			],
+			[
+				"pos",
+				"post"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"uc",
+				"ucwords"
+			],
+			[
+				"img-",
+				"img-rounded"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ifr",
+				"iframe-player"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"var",
+				"variable"
+			],
+			[
+				"vari",
+				"variable"
+			],
+			[
+				"_S",
+				"_SERVER"
+			],
+			[
+				"drupal_session",
+				"_drupal_session_read"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"loc",
+				"location"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"com",
+				"Complete"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"ful",
+				"fuel_type"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"s",
+				"snapTo"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"si",
+				"font-size"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"data",
+				"dataArray"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"t",
+				"table	Tag"
+			],
+			[
+				"ke",
+				"keanggotaan"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"parent",
+				"parent_permalink"
+			],
+			[
+				"sub",
+				"subscription"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"contact",
+				"contact_configuration"
+			],
+			[
+				"st",
+				"store_location"
+			],
+			[
+				"site_",
+				"site_navigations"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ar",
+				"array_count"
+			],
+			[
+				"_el",
+				"_element"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"winn",
+				"winner_of_the_days"
+			],
+			[
+				"array",
+				"array_universe"
+			],
+			[
+				"image",
+				"image_id"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"find_",
+				"find_one"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"vi",
+				"visibility"
+			],
+			[
+				"strre",
+				"str_replace"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"Sch",
+				"xml_set_character_data_handler"
+			],
+			[
+				"fu",
+				"full_name"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"subs",
+				"substr"
+			],
+			[
+				"order",
+				"order_by"
+			],
+			[
+				"site_menu",
+				"site_menu_id"
+			],
+			[
+				"dashbo",
+				"dashboard_content"
+			],
+			[
+				"test",
+				"testimonials"
+			],
+			[
+				"testimonial",
+				"testimonials"
+			],
+			[
+				"site",
+				"site_menu_id"
+			],
+			[
+				"comi",
+				"compile"
+			],
+			[
+				"media",
+				"medias"
+			],
+			[
+				"photo",
+				"photogallery"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"e",
+				"elseif	elseif …"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"M",
+				"Model"
+			],
+			[
+				"functio",
+				"function_exists"
+			],
+			[
+				"act",
+				"action_delete_about"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"tw",
+				"Twitter timeline"
+			],
+			[
+				"twe",
+				"Tweet"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"art",
+				"Laravel Artisan Command"
+			],
+			[
+				"tmp",
+				"Tmpl: Create Laravel Webarq"
+			],
+			[
+				"tp",
+				"Tmpl: Create Laravel Webarq"
+			],
+			[
+				"la",
+				"Laravel Generate: Model"
+			],
+			[
+				"lara",
+				"Laravel Generate: Model"
+			],
+			[
+				"artisan",
+				"Laravel Artisan Command"
+			],
+			[
+				"arti",
+				"Laravel Artisan Command"
+			],
+			[
+				"searc",
+				"File: Search Files"
+			],
+			[
+				"stac",
+				"Stackoverflow: Search from Input"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: Enable Package"
+			],
+			[
+				"twee",
+				"Tweet"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/Data/www/uniqlo_quest/application/config/database.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/cron.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/header.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/gallery.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/participant 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/mechanism.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/participant.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/twitter.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/images.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/home 2.php",
+		"/Volumes/Data/www/panasonic-gamba/application/controllers/admin/player.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/metronix.php",
+		"/Volumes/Data/www/panasonic-selfie/application/modules/participant/models/settings.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/scoretheselfie.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/twitter_model.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/scoretheselfie 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/gallery 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/footer.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/site_template.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/gallery_model.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/home.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/config/config.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/config/routes.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/controllers/home.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/user_model.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/main.js",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/scores.php",
+		"/Users/defrianyarfi/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Users/defrianyarfi/Library/Application Support/Sublime Text 2/Packages/User/PHP.sublime-settings",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/upload 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/colorbox.css",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/style.css",
+		"/Volumes/Data/www/panasonic-selfie/application/controllers/scores.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/upload.php",
+		"/Users/defrianyarfi/Desktop/Install",
+		"/Volumes/Data/www/panasonic-selfie/html/thanks.php",
+		"/Volumes/Data/www/panasonic-selfie/application/models/twitter_model.php",
+		"/Volumes/Data/www/panasonic-selfie/application/controllers/cron.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/main 2.js",
+		"/Users/defrianyarfi/Desktop/upload.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/register 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/request.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/facebook.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/config 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/routes.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/config.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/.htaccess",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/database 2.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/tiket.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/team.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/user_dream_team.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/player_model.php",
+		"/Users/defrianyarfi/Desktop/deni.txt",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/index.php",
+		"/Users/defrianyarfi/Downloads/thank.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/tiket_thanks.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/user_create_team.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/user_pick_team.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/player.php",
+		"/Volumes/Data/[WORKS]/Dentsu/Gamba Osaka pt2/pns-bola/application/config/database.php",
+		"/Volumes/Data/www/panasonic-gamba/application/config/facebook.php",
+		"/Volumes/Data/www/panasonic-gamba/application/config/database.php",
+		"/Volumes/Data/www/panasonic-gamba/application/config/config.php",
+		"/Volumes/Data/www/panasonic-gamba/.htaccess",
+		"/Volumes/Data/www/panasonic-gamba/application/config/routes.php",
+		"/Volumes/Data/[WORKS]/Dentsu/Gamba Osaka pt2/crebas_panasonic.sql",
+		"/Volumes/Data/www/tests/.htaccess",
+		"/Users/defrianyarfi/Desktop/Thecurcols/index.html",
+		"/Users/defrianyarfi/Desktop/default.js",
+		"/Users/defrianyarfi/Desktop/untitled.py",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/homepage.php",
+		"/Users/defrianyarfi/Downloads/Ftp thecurcols@tab4bettermoments.com.xml",
+		"/Users/defrianyarfi/Downloads/[Samsung Galaxy V] the curcols-rekam page.txt",
+		"/Volumes/Data/www/panasonic-selfie/html/include/header.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/config/database.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/views/gallery.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/views/request.php",
+		"/Volumes/Data/[SCRIPTS]/fancyapps-fancyBox-18d1712/demo/iframe.html",
+		"/Volumes/Data/[TEMPLATE]/squadfree/index.html",
+		"/Volumes/Data/[SCRIPTS]/fancyapps-fancyBox-18d1712/README.md",
+		"/Volumes/Data/[SCRIPTS]/Vide-master/examples/block-bg.html",
+		"/Volumes/Data/[SCRIPTS]/Vide-master/examples/body-bg.html",
+		"/Volumes/Data/www/pyrocms/system/cms/config/config.php",
+		"/Volumes/Data/[SCRIPTS]/dfcb-BigVideo.js-f689c56/README.md",
+		"/Volumes/Data/www/pyrocms/system/cms/config/asset.php",
+		"/Volumes/Data/www/pyrocms/system/cms/controllers/.htaccess",
+		"/Volumes/Data/www/pyrocms/system/cms/controllers/admin.php",
+		"/Volumes/Data/www/pyrocms/system/cms/controllers/ajax.php",
+		"/Volumes/Data/www/pyrocms/system/cms/core/REST_Controller.php",
+		"/Volumes/Data/www/pyrocms/system/cms/core/MY_Controller.php",
+		"/Volumes/Data/www/pyrocms/system/cms/core/Admin_Controller.php",
+		"/Volumes/Data/www/pyrocms/system/cms/core/Sites_Controller.php",
+		"/Volumes/Data/www/pyrocms/system/cms/core/MY_Config.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/controllers/admin/home.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/application/config/autoload.php",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/php.ini",
+		"/Volumes/Data/www/mamypokoindonesia.com/bedtime/error_log",
+		"/Volumes/Data/www/CodeIgniter-2.2-stable/application/config/config.php",
+		"/Volumes/Data/www/ci_rbac/application/logs/log-2014-12-10.php",
+		"/Volumes/Data/www/CodeIgniter-2.2-stable/application/controllers/welcome.php",
+		"/Volumes/Data/www/simplewavenet/css/style.css",
+		"/Volumes/Data/www/magento/app/design/frontend/base/default/template/cms/default/home.phtml",
+		"/Volumes/Data/www/magento/app/etc/config.xml",
+		"/Volumes/Data/www/magento/index.php",
+		"/Volumes/Data/www/magento/.htaccess",
+		"/Volumes/Data/www/website/script/cake/libs/controller/components/auth.php",
+		"/private/var/folders/6v/3hg37wc97pq7hp0qhl9wdgs80000gn/T/fz3temp-1/home_page.php",
+		"/Volumes/Data/www/ci_rbac/application/modules/page/config/autoload.php",
+		"/Volumes/Data/www/sabikagroup.com/mobilindo/_app/classes/Lib.php",
+		"/Volumes/Data/www/offistarindo/_app/classes/lib.php",
+		"/Volumes/Data/www/codeigniter-restserver-master/application/views/welcome_message.php",
+		"/Volumes/Data/www/codeigniter-restserver-master/application/controllers/index.html",
+		"/Volumes/Data/www/codeigniter-restserver-master/application/config/routes.php",
+		"/Volumes/Data/www/default_v.3.3/_mod/_modules/user/classes/Model/User.php",
+		"/Volumes/Data/www/default_v.3.3/_mod/_modules/user/classes/Controller/Backend/User.php",
+		"/Volumes/Data/www/website/CodeIgniter_2.0.2_pcart/application/models/mproducts.php",
+		"/Volumes/Data/www/ci_blog/application/models/user_model.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/config/config.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/modules/content/controllers/pages.php",
+		"/Volumes/Data/www/pyrocms/system/cms/modules/users/views/admin/form.php",
+		"/Volumes/Data/www/pyrocms/system/cms/modules/users/controllers/admin.php",
+		"/Volumes/Data/www/pyrocms/system/cms/modules/files/models/file_m.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/modules/content/views/admin/fields/edit.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/modules/content/models/pages_model.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/config/routes.php",
+		"/Volumes/Data/www/cms-canvas-1.1.6/application/config/constants.php",
+		"/Volumes/Data/www/Bonfire-master/public/themes/default/index.php",
+		"/Volumes/Data/www/Bonfire-master/public/themes/default/footer.php"
+	],
+	"find":
+	{
+		"height": 73.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/var/www/indogrosir/__mods/webarq/page/classes/Controller",
+			"/var/www/indogrosir",
+			"/var/www/indogrosir/__mods",
+			"<project>,/var/www/indogrosir/__mods",
+			"/var/www/indogrosir",
+			"/var/www/indogrosir/__apps",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\career",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\career",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\subscription",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\promo",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\glossary",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\faq",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\membership",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\promo",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\faqLanguage",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\glossary",
+			"C:\\xampp\\htdocs\\indogrosir\\__mods\\webarq\\faq",
+			"<open files>,C:\\xampp\\htdocs\\indogrosir\\__mods,C:\\xampp\\htdocs\\astel\\__modules",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"uri_string()",
+			"id",
+			"btn-hit",
+			"get_all_images",
+			"->get->",
+			"regis",
+			"regid",
+			"prin",
+			"vote",
+			"@$",
+			"exit",
+			"));",
+			"feeds",
+			"announce",
+			"map",
+			"dream_team",
+			"Persib",
+			"posit2",
+			"video pemain",
+			"ucfirst",
+			"ucwords",
+			"appereance",
+			"select_pl",
+			"marginbot-50",
+			"about",
+			"font-famil",
+			"ADMIN_PATH",
+			"display_er",
+			"displa",
+			"enable",
+			"mcrypt.so",
+			"extension=mcrypt.so",
+			"time",
+			"display_",
+			"_er",
+			"display_er",
+			"from",
+			"owner",
+			"freeMode",
+			"msisdn",
+			".item-content .panel-group { margin-top: 5px; }",
+			"init_msis",
+			"GET",
+			"loader",
+			"close",
+			"scrollUp",
+			"icon-song-pause",
+			"closedbo",
+			"scroll-",
+			"stick",
+			"init_mvp",
+			"23%",
+			".btn-default:focus",
+			"details-top",
+			"iframe-handler",
+			"magnificPopup",
+			"dbox",
+			".panel-heading",
+			".icon-play",
+			"play-it",
+			"icon-share",
+			"icon-song",
+			"icon-song-pause",
+			"icon-song",
+			"icon-song-pause",
+			"-play",
+			"clean",
+			"mail",
+			"gmap3",
+			"map-loca",
+			"login",
+			"11185",
+			", Jl.",
+			"Jl.",
+			"'",
+			"Jalan",
+			"Jl.",
+			"\"",
+			"\" ",
+			" \"",
+			" |",
+			"\"",
+			"Jalan",
+			" JL",
+			"*",
+			"|",
+			"\"",
+			"jl.",
+			"^",
+			"Beroperasi di Wilayah Kantor BI Pusat",
+			"..",
+			"Jalan",
+			"  ",
+			"\n\n",
+			"$",
+			" ,",
+			"\"",
+			"),\n",
+			"\n",
+			"download_fil",
+			"head-gallery",
+			"navbar-hea",
+			".navbar",
+			"socials",
+			";\n",
+			"navigate",
+			"search .",
+			"navigate",
+			"newslet",
+			"naviga",
+			".header",
+			"nav-lea",
+			"header",
+			"nav-leajeans",
+			"carousel-gallery",
+			"#carousel-gallery .item",
+			"news-detail",
+			"static_page",
+			"#carousel-gallery .item",
+			"news-co",
+			"new-cont",
+			".pagination .links",
+			"pagina",
+			"caption",
+			"shoplist",
+			"desc",
+			"descri",
+			"check"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$this->uri->segment(1)",
+			"score",
+			"Persija",
+			"ucwords",
+			"ucfirst",
+			"appearance",
+			"appereance",
+			",Jl.",
+			"\\'",
+			"JL.",
+			"",
+			"\"",
+			"",
+			"JL.",
+			"JL. ",
+			"Jalan",
+			"JL",
+			"",
+			"*",
+			"",
+			"JL.",
+			"jl.",
+			"\"",
+			"",
+			".",
+			"JL.",
+			"Jalan",
+			" ",
+			"  ",
+			"\n\n",
+			"|",
+			" \n",
+			",",
+			"",
+			",'', '', '1402987135', ''),",
+			",\n",
+			"\n",
+			"Volumes/Data/www/dailyresidences.com",
+			"blue",
+			"Page",
+			"Promo_Category",
+			"Page",
+			"Promo_List",
+			"Contact_City",
+			"('Page')",
+			"Model::factory('Page')",
+			"<?php echo App::$config->bs_asset ?>default/site/images",
+			"'",
+			"career",
+			"Career",
+			"career",
+			"Career",
+			"career",
+			"careers",
+			"@License		Kohana ~ Webarq ~ Daniel Simangungsong",
+			"Deni Budhi Santana",
+			"career",
+			"Career",
+			"--edit-membership--",
+			"--edit-subscription--",
+			"Deni Budhi Santana",
+			"membership",
+			"Membership",
+			"promo",
+			"Promo",
+			"faq",
+			"Subscription",
+			"subscription",
+			"city",
+			"'multilang'                 => false,",
+			"faq",
+			"faq\nvideogallery",
+			"$page\nvideogallery",
+			"\nvideogallery",
+			"medias\nvideogallery",
+			"photogallery\nvideogallery",
+			"photogallery\nvideogal",
+			"photogallery\nvideogallery"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"conne",
+				"public_html/bundles/oneauth/controllers/connect.php"
+			],
+			[
+				"sty",
+				"public_html/laravel/css/style.css"
+			],
+			[
+				"about",
+				"_modules/ampflified/about/views/html/site/about/right-content-dashboard.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\xampp\\htdocs\\indomaret.dev\\indomaret.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 82.0,
+	"status_bar_visible": true
+}
