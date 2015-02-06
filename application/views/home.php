@@ -2,7 +2,7 @@
 	
 <script type="text/javascript">
       window.onload = function() {
-        FB.Canvas.setSize({ width: 810, height: 1017 });
+        FB.Canvas.setSize({ width: 810, height: 1147 });
     }
 </script>
 	<section id="content" class="home">

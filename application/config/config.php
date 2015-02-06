@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= "https://". $_SERVER['HTTP_HOST']."/sts/";
+$config['base_url']	= "http://". $_SERVER['HTTP_HOST']."/uniqlo_quest/";
 
 /*
 |--------------------------------------------------------------------------
@@ -360,10 +360,11 @@ $config['proxy_ips'] = '';
 $config['developer_name']	= 'Dentsu Digital Division'; 
 $config['developer_url']	= 'http://dentsudigitaldivision.com/';
 
-
+/*
 $config['modules_locations'] = array(
         APPPATH.'modules/' => '../modules/'
     );
+*/
 
 /* End of file config.php */
 

@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 <script type="text/javascript">
       window.onload = function() {
-        FB.Canvas.setSize({ width: 810, height: 796 });
+        FB.Canvas.setSize({ width: 810, height: 820 });
     }
 </script>
 <section id="content" class="mechanism">
@@ -14,6 +14,6 @@
 		</div>
 	</div>
 	<div class="atas text-center">
-		<a class="btn btn-primary btn-lg" role="button" href="register.php">IKUT SEKARANG</a>
+		<a class="btn btn-primary btn-lg" role="button" href="<?=base_url('upload');?>">IKUT SEKARANG</a>
 	</div>
 </section>

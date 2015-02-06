@@ -5,10 +5,6 @@ class mechanism extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		
-		// Load user related model in admin module
-		$this->load->model('admin/Users');
-		$this->load->model('admin/UserProfiles');
-					
 	}
 	
 	public function index() {
@@ -17,7 +13,7 @@ class mechanism extends CI_Controller {
 		$data['main'] = 'mechanism';
 				
 		// Set site title page with module menu
-		$data['page_title'] = 'User';
+		$data['page_title'] = 'Mechanism';
 		
 		// Load admin template
 		$this->load->view('template/public/site_template', $this->load->vars($data));

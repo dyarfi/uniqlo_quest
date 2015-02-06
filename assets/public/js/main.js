@@ -1,80 +1,67 @@
 $(document).ready(function() {
-	
-	var imgLoad = imagesLoaded('.galeri');
-	
-	imgLoad.on( 'always', function() {
-		//console.log( imgLoad.images.length + ' images loaded' );
-		
-		// detect which image is broken
-		for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
-		  var image = imgLoad.images[i];
-		  var result = image.isLoaded ? 'loaded' : 'broken';
-		  //console.log( 'image is ' + result + ' for ' + image.img.src );
-		}
-	});
-	
-	imgLoad.on( 'done', function() {
-		
-		//var loaded = base_URL + 'public/img/ajax-loading.gif';
-		//var imaged = image.img.src;
-		//alert(image.img.src);
-		
-		//image.img.src = base_URL + 'assets/public/img/ajax-loading.gif';
-		
-	});
-	
-	imgLoad.on( 'progress', function(instance, image) {
-		
-		var loaded = base_URL + 'assets/public/img/ajax-loading.gif';
-		var imaged = image.img.src;
-		
-		//image.img.src = (imaged) ? imaged : loaded;
-		
-		//image.before('<div class="asdf"></div>');
-		
-		//console.log(loaded);
-		
-		//console.log(image.img.src);
-		
+
+	$(".colorbox").colorbox({
+		rel: 'nofollow',
+		width:'640',
+		maxWidth:'640px',
+		innerWidth:'640px',
+		/*
+		title:function() {
+			var ids = $(this).attr('data-id');
+			var cnt = $(this).attr('data-int');
+   			var txt = $(this).attr('title');
+   			var descs = 'asdfsadf asdfsadf asdfasdf sadfasd';
+   			var url = 'https://www.facebook.com/PanasonicIndonesia/app_384917901668087';
+   			var html ='<div class="pull-left"><a href="#" class="shareit facebook" rel="facebook"></a></div><div class="col-xs-5">'+ids+'<div class="pull-right">'+cnt+'<i class="glyphicon glyphicon-heart pull-right"></i></div></div>'
+   						+'<div class="pull-right"><a href="#" class="shareit twitter" rel="twitter"></a></div>';
+   			return html;
+		},
+		*/
 	});
 
-	// Plugin
-	$(".fancybox").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
-		fitToView	: false,
-		width		: '70%',
-		height		: '70%',
-		autoSize	: false,
-		closeClick	: false,
-		openEffect	: 'none',
-		closeEffect	: 'none',
-		helpers : {
-    		title : {
-    			type : 'over'
-    		}
-    	}
+	$('.twitter-head').hover(function() {
+		$(this).attr('style','cursor:pointer');
 	});
-	
-	$('a.fancybox[rel="gallery"]').bind('click',function(e){
-		// prevent default behaviour
-		e.preventDefault();		
-		$.fancybox({
-			'autoResize'	: true,
-			'aspectRatio'	: true,
-			'titleShow'     : false,
-			'transitionIn'	: 'elastic',
-			'transitionOut'	: 'elastic',
-			'easingIn'      : 'easeOutBack',
-			'easingOut'     : 'easeInBack'
+
+	$('.twitter-head').click(function() {
+		var link = $(this).attr('data-url');
+		window.open(link,'_blank')
+	});
+
+	$('.btn-hit').click(function() {
+		var ahf = $(this);
+		var img = $(this).attr('rel');
+		var uri = $(this).attr('data-url');
+		var ref = $(this).attr('data-ref');		
+		var span = $(this).find('span.hit');
+		var srel = span.attr('rel');
+		$.ajax({
+			url  : uri,
+			dataType: 'json',
+			type : 'POST',
+			data : {'image':img},
+		}).done(function(msg) {
+			//var val = jQuery.parseJSON(msg);
+			console.log(msg);
+			if (msg == true) {
+				// Redirect after request language
+				$('.modal-message').modal('show');
+				var hit = span.text();
+				console.log(hit++);
+				$('span.hit[rel="'+srel+'"]').text(hit++);
+				ahf.attr('style','pointer-events: none;');
+				//location.href = ref;
+			}
 		});
-		//return false;
 	});
+
 	$('.progress').hide();	
+
 	$('#fileupload').fileupload({
 		url: $(this).attr('data-url'),
 		dataType: 'json',
 		acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+		maxFileSize:500000, // 500 KB
 		sequentialUploads: false,
         done: function (e, data) {
 			e.preventDefault();
@@ -82,7 +69,7 @@ $(document).ready(function() {
 				//alert(file.error);
 				$('.clear .topBotDiv10').html('<h2>Sukses</h2>').show();
 				
-				$('.img-thumbnail a.fancybox')
+				$('.img-thumbnail a.colorbox')
 				.prop('href',base_URL + file.url).empty()
 				.html('<img src="'+base_URL + file.thumbnailUrl+'"//>');
 
@@ -90,6 +77,7 @@ $(document).ready(function() {
             });			
 			$('.clear.topBotDiv10').html('<h2>Sukses</h2>').hide();
 			$('.progress').hide();			
+			$('.button-submit').show();
         },
         progressall: function (e, data) {
 			e.preventDefault();			
@@ -98,9 +86,34 @@ $(document).ready(function() {
             $('.progress .progress-bar').css(
                 'width',
                 progress + '%'
-            ).html(progress+'% Sedang mengunggah, mohon sabar..');
+            ).html(progress+'% Sedang mengunggah, mohon menunggu..');
+            $('.button-submit').hide();
         }
-    }).prop('disabled', !$.support.fileInput)
+    })
+	.on('fileuploadfail', function (e, data) {
+        $.each(data.files, function (index) {
+        	var error = $('<span class="text-danger"/>').text('File upload failed.');
+            $(data.context.children()[index])
+                .append('<br>')
+                .append(error);
+            console.log(files);
+        })
+    })
+	.prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 	
+    $('select[name="sort"]').change(function() {
+    	var varb = $(this).val();
+    	$.ajax({
+		  	data: $(this).serializeArray(),
+		}).done(function(msg) {
+			var redirect = $(location).attr('href');
+			var val = jQuery.parseJSON(msg);
+			// Redirect after request language
+			if (varb != '') {
+				location.href = val.url;
+			}
+		});
+    });
+
 });

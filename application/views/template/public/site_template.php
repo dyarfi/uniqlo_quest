@@ -20,14 +20,16 @@
 	<meta property="og:url" content="_URL" />
 	<meta property="og:image" content="_URL_THUMB_" />		
 	
-    <link href="<?=base_url();?>assets/public/img/favicon.ico" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/colorbox/colorbox.css" />
+
+	<link type="text/css" href="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.css" rel="stylesheet" media="all" />
+
+    <link href="<?=base_url();?>assets/public/img/favicon.ico" rel="icon" type="image/x-icon" />    
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/style.css" />
 	
-	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/public/css/fancybox/jquery.fancybox.css" />
-
-
+	
     <!--[if IE]>
       <script src="<?=base_url();?>assets/public/js/html5shiv.js"></script>
       <script src="<?=base_url();?>assets/public/js/respond.min.js"></script>
@@ -37,9 +39,9 @@
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/modernizr.js"></script>
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/selectivizr.min.js"></script>
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/bootstrap.min.js"></script>	
-	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.fancybox.pack.js"></script>
-	<!--<script type="text/javascript" src="<?=base_url();?>assets/public/js/SimpleAjaxUploader.min.js"></script>-->
+
 	
+	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.colorbox-min.js"></script>	
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.ui.widget.min.js"></script>
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.iframe-transport.js"></script>
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.fileupload.js"></script>
@@ -47,6 +49,19 @@
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.fileupload-validate.js"></script>
 
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/imagesloaded.pkgd.min.js"></script>
+
+	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.js"></script>
+	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.pieRenderer.min.js"></script>
+	
+	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.json2.min.js"></script>
+	
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.pointLabels.min.js"></script-->
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.categoryAxisRenderer.min.js"></script-->
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.canvasAxisTickRenderer.min.js"></script-->
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.canvasTextRenderer.min.js"></script-->
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.barRenderer.min.js"></script-->
+	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.donutRenderer.min.js"></script-->
+
 	
 	<script type="text/javascript">
 		var base_URL = '<?php echo base_url();?>';

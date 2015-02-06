@@ -41,28 +41,28 @@
 $route['default_controller'] = "home";
 $route['download/(:num)'] = 'download';
 $route['404_override'] = '';
+$route['admin'] = "admin/home";
 
 // Route for Admin
 //$route['admin/authenticate/logout'] = "admin/authenticate/logout";
 
-$admin = (ADMIN) ? str_replace('/', '', ADMIN) : '';
+//$admin = (ADMIN) ? str_replace('/', '', ADMIN) : '';
 
-$route[$admin]							= "admin/authenticate/login";
-$route[$admin.'/authenticate/(:any)']	= "admin/authenticate/$1";
+//$route[$admin]							= "admin/authenticate/login";
+//$route[$admin.'/authenticate/(:any)']	= "admin/authenticate/$1";
 
-$route[$admin.'/dashboard/(:any)']		= 'admin/dashboard/$1';
-$route[$admin.'/user/(:any)']			= 'admin/user/$1';
-$route[$admin.'/usergroup/(:any)']		= 'admin/usergroup/$1';
-$route[$admin.'/modulelist/(:any)']		= 'admin/modulelist/$1';
+//$route[$admin.'/dashboard/(:any)']		= 'admin/dashboard/$1';
+//$route[$admin.'/user/(:any)']			= 'admin/user/$1';
+//$route[$admin.'/usergroup/(:any)']		= 'admin/usergroup/$1';
+//$route[$admin.'/modulelist/(:any)']		= 'admin/modulelist/$1';
 
 //$route[$admin.'/career/(:any)']			 = 'career/$1';
 //$route[$admin.'/careerdivision/(:any)']	 = 'career/careerdivision/$1';
 //$route[$admin.'/careerapplicant/(:any)'] = 'career/careerapplicant/$1';
 //$route[$admin.'/page/(:any)']			 = 'page/$1';
 
-
 $route['cron_tweets'] = 'cron/tweets';
-$route[$admin.'/(:any)'] = '$1';
+//$route[$admin.'/(:any)'] = '$1';
 
 //$route['admin/authenticate']	 = "admin/authenticate";
 //$route['admin/(:any)'] = 'admin/$1';

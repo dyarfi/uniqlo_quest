@@ -12,21 +12,65 @@ class Home extends CI_Controller {
         header('Access-Control-Allow-Origin: *');
 		
 		// Load Setting data
-		$this->load->model('setting/Settings');
+		//$this->load->model('setting/Settings');
 	
 	} 
 
     public function index() {    
-        
-       // Set page title 
-        $data['page_title'] = 'Home';
+        /*
+        $facebook = new Facebook();        
+		$fb_id = $facebook->getUser();
 
-        // Set main template
-		$data['main'] = 'home';
+        if ($fb_id) {            
+            $user_fb = $facebook->api('/me?fields=name,picture,email');
 
-        // Load admin template
-		$this->load->view('template/public/site_template', $this->load->vars($data));
-		
+            // Check database insert if empty
+            if ($this->user_model->get_temp($fb_id)) {
+
+	           	// Check already registered
+	            $user = $this->user_model->check_fb_user($fb_id);
+
+            } else {
+
+                $fb_user = array();
+                $fb_user['fb_name'] = @$user_fb['name'];
+                $fb_user['fb_email'] = @$user_fb['email'];
+                $fb_user['fb_id'] = @$user_fb['id'];
+                $fb_user['fb_pic'] = @$user_fb['picture']['data']['url'];
+                $fb_user['added'] 		= time();
+                $fb_user['modified'] 	= time();
+                $this->user_model->insert_temp($fb_user);           
+                
+            }
+			
+			// Check already registered
+	        $user = $this->user_model->check_fb_user($fb_id);
+            
+            if ($user) {
+                // Registered
+                $signedRequest = $facebook->getSignedRequest();
+                $sc_id = false;                
+                if (isset($signedRequest['app_data'])) {
+                    $sc_encoded = $signedRequest['app_data'];
+                    $sc_id = $this->user_model->decode($sc_encoded);
+                }
+                $this->config->set_item('user_id', $user->part_id);
+                if ($sc_id) {
+                    redirect(base_url() . 'participant/single/' . $sc_encoded . '?data=' . $this->user_model->encode($user->part_id));
+                } else {
+                    //redirect(base_url() . 'participant?data=' . $this->user_model->encode($user->part_id));
+                    $this->session->set_userdata('user_id',$this->user_model->encode($user->part_id));
+                    redirect(base_url() . 'participant');
+                }
+            } else {
+                // Not registered
+                $this->show_home();
+            }
+        } else {
+            // Request to get data
+            $this->load->view('request');
+        }
+        */
 	}
 
 	// Show home page
@@ -46,21 +90,23 @@ class Home extends CI_Controller {
 	// User registration
 	public function register () {
 
-		$data = $this->input->get('data');
-
-        if ($data) {
-            $user_id = $this->user_model->decode($data);
-            if ($user_id) {
-                redirect(fb_url('gallery'));
-                die();
-            }
-        }
-
 		$facebook = new Facebook();
 
         $fb_id = $facebook->getUser();
 		
-        $user_fb = $this->user_model->get_temp($fb_id);
+        $user_fb_data 	= $this->user_model->get_temp($fb_id);
+
+		$user_data 		= $this->session->userdata('user_id');
+		
+		$fb_user = $this->user_model->check_fb_user($fb_id);
+
+        if ($user_data) {
+            $user_id = $this->user_model->decode($user_data);
+            if ($user_id && $fb_user) {
+                redirect(fb_url('gallery'));
+                die();
+            }
+        }
 
         // Default data setup
 		$fields	= array(
@@ -74,12 +120,12 @@ class Home extends CI_Controller {
 		
 		$errors	= $fields;
 
-		$this->form_validation->set_rules('name', 'Nama', 'trim|required|min_length[5]|max_length[24]|xss_clean');
+		$this->form_validation->set_rules('name', 'Nama', 'trim|required|max_length[55]|xss_clean');
 		$this->form_validation->set_rules('address', 'Alamat','trim|required');
 		$this->form_validation->set_rules('checkbox_data', 'Syarat dan Ketentuan','trim|required');		
 		$this->form_validation->set_rules('checkbox_rules', 'Data adalah benar','trim|required');		
-		$this->form_validation->set_rules('email', 'Email','trim|valid_email|required|min_length[5]|max_length[24]|xss_clean');
-		$this->form_validation->set_rules('phone', 'No. Telp','trim|required|is_natural|xss_clean|max_length[25]');
+		$this->form_validation->set_rules('email', 'Email','trim|valid_email|required|max_length[55]|xss_clean');
+		$this->form_validation->set_rules('phone', 'No. Telp','trim|required|is_natural|xss_clean|max_length[45]');
 		$this->form_validation->set_rules('twitter', 'Twitter','trim|xss_clean|max_length[55]');						
 		
 		// Check if post is requested
@@ -89,11 +135,28 @@ class Home extends CI_Controller {
 			if ($this->form_validation->run() === FALSE)
 			{
 
+				// Set error fields
+				$error = array();
+				foreach(array_keys($fields) as $error) {
+					$errors[$error] = form_error($error);
+				}
+
+				// Set previous post merge to default
+				$fields = array_merge($fields, $this->input->post());
+
 				// Set site title page with module menu
 				$data['page_title'] = 'Daftar';
-			
+				
+				// Set main template
 				$data['main']	 = 'register';
+			
+				// Set error data to view
+				$data['errors'] = $errors;
 
+				// Post Fields
+				$data['fields']		= (object) $fields;
+
+				// Set site template
 				$this->load->view('template/public/site_template', $this->load->vars($data));
 				
 			}
@@ -111,21 +174,26 @@ class Home extends CI_Controller {
 				$this->load->model('user_model');
 				$user_id = $this->user_model->reg_participant($part);
 
-				// redirect(base_url('participant'));
 				$this->config->set_item('user_id', $user_id);
 
-				redirect(base_url() . 'participant?data=' . $this->user_model->encode($user_id));
+				$user_id  = $this->session->set_userdata('user_id', $this->user_model->encode($user_id));
+
+				redirect(base_url('upload'));
 				
 			}
 			
 		} else {
+
+			// Set fb data
+			$data['user_fb'] = $user_fb_data;
+				
 			// Set site title page with module menu
 			$data['page_title'] = 'Daftar';
+
 			// Set default template
 			$data['main']	 = 'register';
 
-			$data['user_fb'] = $user_fb;
-				
+			// Set site template	
 			$this->load->view('template/public/site_template', $this->load->vars($data));
 		}		
 		
@@ -140,16 +208,9 @@ class Home extends CI_Controller {
 			exit;
 		}
 
-		//// Set main template
-		//$data['main'] = 'register';
-				
-		// Set site title page with module menu
-		//$data['page_title'] = 'Daftar';
-		
-		// Load admin template
-		//$this->load->view('template/public/site_template', $this->load->vars($data));
 	}
 	
+	// Gallery
 	public function gallery() {
         $this->load->library('pagination');
 
@@ -184,8 +245,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data["galleries"] = $this->user_model->
-                get_gallery('', $page, $order, $search);
+        $data["galleries"] = $this->user_model->get_gallery('', $page, $order, $search);
         $links = $this->pagination->create_links($sort);
         $data['links'] = $links; //str_replace("&nbsp;", '', $links);
 		        
@@ -200,5 +260,5 @@ class Home extends CI_Controller {
     }
 }
 
-/* End of file user.php */
-/* Location: ./application/controllers/user.php */
+/* End of file home.php */
+/* Location: ./application/controllers/home.php */

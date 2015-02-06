@@ -2,16 +2,17 @@
 
 <script type="text/javascript">
       window.onload = function() {
-        FB.Canvas.setSize({ width: 810, height: 1100 });
+        FB.Canvas.setSize({ width: 810, height: 974 });
     }
 </script>
-	<section id="content" class="galeri">
+      <section id="content" class="galeri">
+      <img class="img-responsive img-center copy-twitter" src="<?php echo base_url('assets/public/img/galeri-tambahan.jpg');?>" alt="copy twitter"/>
     <div class="cover">
     <div class="head_tit galeri"></div>
     <div class="listcen">
     	<div class="cont">         
         <div class="row clearfix">
-          <div class="navigasi">
+          <div class="navigasi hidden">
           <div class="btn-group">
             <div class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
               Sort by <span class="caret"></span>
@@ -25,53 +26,44 @@
           </div>
 
     			<?php 
+          if (!empty($tweets)) {
           foreach ($tweets as $val) { ?>
     			<div class="col-xs-4 col-md-4">                  
-    				<div class="thumbnail">					
-    					<?php
-    						$pathinfo	= pathinfo($val->file_name);
-    						$thumb		= $pathinfo['filename'].'_thumb.'.$pathinfo['extension'];
-    					?>
-    					<a href="<?=base_url();?>uploads/gallery/<?=$val->file_name?>" class="fancybox" title="<?//=$val->name;?>" rel="gallery">
-    						<img src="<?=base_url();?>uploads/gallery/<?=$thumb?>" alt="<?//=$val->name;?>" />
+    				<div class="thumbnail">
+              <?php if (!empty($val['tweet_img'])) { ?>
+    					<a href="<?php echo 'https://twitter.com/'.$val['tweet_user'].'/status/'.$val['tweet_id'];?>" target="_blank" title="<?=$val['tweet_user'];?>" rel="gallery">
+    						<img src="<?php echo $val['tweet_img'];?>" alt="<?=$val['tweet_user'];?>" />
     					</a>
-    				</div>
-    				<div class="bottomleft"><?=$this->user_model->get_user($val->part_id)->name;?>
-              <?php if ($user_id == $val->part_id) { ?>
-              <i class="glyphicon glyphicon-heart pull-right">
-                <span class="hit"><?=$this->gallery_model->check_score($val->part_id, $val->id);?></span>
-              </i>              
-    				  <?php } else { ?>
-              <a href="javascript:;" class="btn-hit" data-toggle="tooltip" data-placement="bottom">
-                <i class="glyphicon glyphicon-heart pull-right">
-                  <span class="hit"><?=$this->gallery_model->check_score($val->part_id, $val->id);?></span>
-                </i>
-              </a>
+              <?php } else { ?>
+              <div class="twitter-head" data-url="<?php echo 'https://twitter.com/'.$val['tweet_user'].'/status/'.$val['tweet_id'];?>">
+                <h5 class="twitter-text"><?=$val['tweet_text'];?></h5>
+              </div>
               <?php } ?>
     				</div>
+    				<div class="bottomleft"><?=$val['tweet_user'];?>
+              <i class="glyphicon glyphicon-heart pull-right"></i>              
+              <span class="hit"><?=$val['favorite_count'];?></span>
+    				</div>
     			</div>
-    			<?php } ?>					  				
+    			<?php } 
+          } else {
+          ?>			
+            <h2>Maaf, belum tersedia</h2>
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+          <?php } ?>		  				
         </div>
 
 
-        <div class="posit2">
-            <?php echo $links; ?> 
-            <!--ul class="pagination">
-              <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i> Sebelumnya</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">Selanjutnya <i class="glyphicon glyphicon-chevron-right"></i></a></li>
-            </ul-->
+        <div class="posit2">            
+            <?php echo $links; ?>           
+            <div class="clear"></div>
         </div>
 
 
         </div>
     </div>
     </div>
-    <div class="atas posit2 text-center">
+    <!--div class="atas posit2 text-center">
 			<a class="btn btn-primary btn-lg" role="button" href="<?=base_url('upload?data='.$this->input->get('data'));?>">IKUTAN SEKARANG</a>
-	</div>
+	  </div-->
 	</section>

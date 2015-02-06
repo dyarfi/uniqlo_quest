@@ -27,8 +27,8 @@ class upload extends CI_Controller {
 	
 	public function selfie() {
 
-		$get_data = $this->input->get('data');
-
+		$get_data 	 = $this->session->userdata('user_id');
+		
         if (!$get_data) {
             redirect(base_url('home/registration'));
         } else {
@@ -47,13 +47,18 @@ class upload extends CI_Controller {
 			// Run validation for checking
 			if ($this->form_validation->run() === FALSE) {
 
+				$part_id	 = $this->user_model->decode($get_data);
+				$participant = $this->user_model->get_participant($part_id);
+
 				$image['file_name'] = $this->input->post('image_temp');
-				$image['part_id']	= $this->user_model->decode($get_data);
+				$image['part_id']	= $part_id;
+				$image['name']		= $participant->name;				
 				$image['status']	= 1;
+				$image['added']		= time();
 
 				$image_id 			= $this->gallery_model->insert_image($image);
 
-				if ($image_id) redirect(base_url() . 'participant?data=' . $this->user_model->encode($image['part_id']));
+				if ($image_id) redirect(base_url() . 'participant?data=' . base64_encode($image_id));
 
 			} else {
 
@@ -76,35 +81,6 @@ class upload extends CI_Controller {
 		$result['result'] = '';
 		
 			// Set validation config
-			/*
-			$config = array(
-               array('field' => 'first_name', 
-                     'label' => 'First Name', 
-                     'rules' => 'trim|required|xss_clean|max_length[25]'),	
-               array('field' => 'last_name', 
-                     'label' => 'Last Name', 
-                     'rules' => 'trim|xss_clean|max_length[25]'),
-               array('field' => 'captcha', 
-                     'label' => 'Captcha', 
-                     'rules' => 'trim|xss_clean|max_length[6]|callback_match_captcha'),
-               array('field' => 'phone', 
-                     'label' => 'Phone', 
-                     'rules' => 'trim|is_natural|xss_clean|max_length[25]'),
-			   array('field' => 'mobile_phone', 
-                     'label' => 'Mobile Phone', 
-                     'rules' => 'trim|is_natural|xss_clean|max_length[25]'),
-			   array('field' => 'website', 
-                     'label' => 'Website', 
-                     'rules' => 'trim|prep_url|xss_clean|max_length[35]'),
-			   array('field' => 'about', 
-                     'label' => 'About', 
-                     'rules' => 'trim|xss_clean|max_length[1000]'),
-			   array('field' => 'division', 
-                     'label' => 'Division', 
-                     'rules' => 'trim|xss_clean|max_length[55]')
-            );
-			*/
-
 			$config = array(
 				array('field' => 'image_name', 
                       'label' => 'File', 
@@ -154,14 +130,9 @@ class upload extends CI_Controller {
 							 $msg = "Something went wrong when saving the file, please try again.";
 							}
 						}
-						
-						//@unlink($_FILES[$file_element_name]);
-						//print_r($status);
-						
+												
 						$file_name	= self::_upload_to($_FILES['fileupload'], $file_hash.'.'.$file_data['extension'], './uploads/gallery/', 0777);
-						
-						
-						
+											
 						$config['source_image']	= $file_name;
 						$config['create_thumb'] = TRUE;
 						$config['maintain_ratio'] = TRUE;
@@ -177,22 +148,8 @@ class upload extends CI_Controller {
 						$file_data	= pathinfo($file_name);
 						$file_mime	= $_FILES['fileupload']['type'];
 															
-						if ($file_name != '' && isset($this->_prefs['uploads']['image_1']['image_manipulation'])) {
-							$params = array('news_id'	 => $this->id1,
-											'name'		 => $file_data['basename'],
-											'field_name' => 'image_1',
-											'file_name'	 => $file_data['basename'],
-											'file_type'	 => $file_mime,
-											'caption'	 => $file_data['basename'],							
-											'status'	 => 'publish');
-
-							//$file_id = $this->news_files->add($params);
-						}
 						
-						//print_r($file_data);
-						//exit;
 						$thumb = $file_data['filename'].'_thumb.'.$file_data['extension'];
-						//$return['files'][] = array(
 						$result['files'][] = array(
 												'name'	=>$file_data['basename'],
 												'size'	=>$_FILES['fileupload']['size'],
@@ -202,39 +159,17 @@ class upload extends CI_Controller {
 												'thumbnailUrl'	=>'uploads/gallery/'. $thumb,
 												//'deleteUrl'		=>URL::site(ADMIN).'/news/filedelete/'.$file_id,
 												'deleteType'	=>'DELETE'
-												);
-
-						//echo json_encode($return);
-						
+												);						
 					}																
 				
 			} else {
 				
 				// Unset captcha post
-				unset($_POST['captcha']); 
-				
-				// Set User Data
-				$user_profile = $this->UserProfiles->setUserProfiles($this->input->post());			
-
-				// Check data if user is exists and status is active
-				if (!empty($user_profile) && $user_profile->status == 1) {
+				unset($_POST['captcha']); 				
 					
-					// Send message if true 
-					$result['result']['code'] = 1;
-					$result['result']['text'] = 'Changes saved !';
-					
-				} else if (!empty($user_profile) && $user->status != 1) { 
-					
-					// Send message if account is not active
-					$result['result']['code'] = 2;
-					$result['result']['text'] = 'Your account profile is not active';			
-					
-				} else {
-					
-					// Send message if account not found					
-					$result['result']['code'] = 0;
-					$result['result']['text'] = 'Profile not found';			
-				}
+				// Send message if account not found					
+				$result['result']['code'] = 0;
+				$result['result']['text'] = 'Image not Found';
 			}
 
 		// Return data esult
@@ -275,5 +210,5 @@ class upload extends CI_Controller {
 	}
 }
 
-/* End of file user.php */
-/* Location: ./application/controllers/user.php */
+/* End of file upload.php */
+/* Location: ./application/controllers/upload.php */

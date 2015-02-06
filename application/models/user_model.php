@@ -80,10 +80,24 @@ class User_model extends CI_Model {
    
     function get_participant($user_id) {
         $this->db->select('*');
-        $this->db->where('id', $user_id);
+        $this->db->where('part_id', $user_id);
         return $this->db->get('participant')->row();
     }
 	
+    public function get_admin ($id = null) {
+        if(!empty($id)){
+            $data = array();
+            $options = array('user_id' => $id);
+            $Q = $this->db->get_where('tbl_user',$options,1);
+            if ($Q->num_rows() > 0){
+                foreach ($Q->result_object() as $row)
+                $data = $row;
+            }
+            $Q->free_result();
+            return $data;
+        }
+    }
+
 	public function get_user ($id = null) {
 		if(!empty($id)){
 			$data = array();
@@ -98,10 +112,31 @@ class User_model extends CI_Model {
 		}
 	}
 
+    public function get_values_users () {
+        $this->db->where('status', 1);
+        $Q = $this->db->get('tbl_user');
+        if ($Q->num_rows() > 0){
+            foreach ($Q->result_object() as $row)
+            $data[$row->user_id] = $row->username;
+        }
+        return $data;
+    }
+
     public function check_fb_user($fb_id) {
         $this->db->where('fb_id', $fb_id);
         return $this->db->get('participant')->row();
     }
+
+    public function check_fb_user_data($fb_id) {
+        $this->db->where('fb_id', $fb_id);
+        $Q = $this->db->get('participant');
+        if ($Q->num_rows() > 0){
+            foreach ($Q->result_object() as $row)
+            $data = $row;
+        }
+        $Q->free_result();
+        return $data;
+}
 
     public function insert_temp($fb) {
         $insert_query = $this->db->insert_string('fb_temp', $fb);

@@ -19,7 +19,21 @@ class scores extends CI_Controller {
             echo 'Not Allowed!';
             exit;
         }
+		
+		// Set default result
+		$result		= '';
 
+		// Set participant id from session
+		$part_id 	= $this->user_model->decode($this->session->userdata('user_id'));      
+
+		// Set participant id from session
+		$image_id 	= base64_decode($this->input->post('image'));
+		
+		// Set scores with image id and participant id		
+		if (!empty($part_id)) {
+			$result = @$this->gallery_model->insert_score($part_id, $image_id);
+		}
+		
 		// Return data esult
 		$data['json'] = $result;
 		
@@ -30,5 +44,5 @@ class scores extends CI_Controller {
 
 }
 
-/* End of file user.php */
-/* Location: ./application/controllers/user.php */
+/* End of file scores.php */
+/* Location: ./application/controllers/scores.php */

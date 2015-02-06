@@ -6,8 +6,8 @@ class register extends CI_Controller {
 		parent::__construct();
 		
 		// Load user related model in admin module
-		$this->load->model('admin/Users');
-		$this->load->model('admin/UserProfiles');
+		//$this->load->model('admin/Users');
+		//$this->load->model('admin/UserProfiles');
 					
 	}
 	

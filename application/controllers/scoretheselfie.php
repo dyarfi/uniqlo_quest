@@ -12,38 +12,43 @@ class scoretheselfie extends CI_Controller {
 	
 	public function index() {				
 			
+        // Set pagination
+        $this->load->library('pagination');        
 
-        $tweets = $this->twitter_model->get_tweets(200);
+        $config['full_tag_open'] = '<div><ul class="pagination pagination-small pagination-centered">';
+        $config['full_tag_close'] = '</ul></div>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+        $config['next_tag_open'] = "<li>";
+        $config['next_tagl_close'] = "</li>";
+        $config['prev_tag_open'] = "<li>";
+        $config['prev_tagl_close'] = "</li>";
+        $config['first_tag_open'] = "<li>";
+        $config['first_tagl_close'] = "</li>";
+        $config['last_tag_open'] = "<li>";
+        $config['last_tagl_close'] = "</li>";     
+
+        $config['base_url'] = base_url('scoretheselfie/index/?');   
+        $config['total_rows'] = $this->twitter_model->get_count_tweet();
+        $config['per_page'] = 9;
+        $config['page_query_string'] = TRUE;
+
+        $this->pagination->initialize($config);                 
+        $page = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
+        $links = $this->pagination->create_links();
+
+        // Set links data
+        $data['links'] = $links; 
+
+        $tweets = $this->twitter_model->get_tweets($config["per_page"],$page);
         for ($i = 0; $i < count($tweets); $i++) {
             $tweets[$i]['duration'] = $this->count_tweet_date($tweets[$i]['duration']);
             $tweets[$i]['tweet_text'] = $this->clean($tweets[$i]['tweet_text']);
         }
         $data['tweets'] = $tweets;
-/*
-		$config['base_url'] = base_url('scoretheselfie');	
-		$config['total_rows'] = $this->gallery_model->get_count_images();
-		$config["per_page"] = 33;
 
-        //$config["uri_segment"] = 1;
-		//$config['page_query_string'] = TRUE;
-
-
-		$get_data = $this->input->get('data');
-		$user_id = $this->user_model->decode($get_data);
-
-
-		$this->pagination->initialize($config); 
-		
-		$links = $this->pagination->create_links();
-		
-		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
-		$data['user_id']	= $this->user_model->check_fb_user($this->fb_id)->part_id;
-
-        $data['links'] 		= $links; 
-
-		$data['gallery'] 	= $this->gallery_model->get_all_images($config["per_page"],$page);
-*/
 		// Set main template
 		$data['main'] = 'scoretheselfie';
 				

@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
       window.onload = function() {
-        FB.Canvas.setSize({ width: 810, height: 800 });
+        FB.Canvas.setSize({ width: 810, height: 700 });
     }
 </script>
 <section id="content">
@@ -18,7 +18,7 @@
 			
 			<div class="img_holder_xhr text-center">				
 				<div class="img-thumbnail">
-					<a class="fancybox" href="<?=base_url();?>assets/public/img/unggah.jpg">
+					<a class="colorbox" href="<?=base_url();?>assets/public/img/unggah.jpg">
 						<img src="<?=base_url();?>assets/public/img/unggah.jpg" alt="" />
 					</a>	
 				</div>
@@ -35,24 +35,24 @@
 
 			<div class="center-block">
 				<div class="fileUpload btn btn-primary btn-md center-block">
-					<span>File</span>
+					<span>Browse</span>
 					<input class="upload" type="file" id="fileupload" name="fileupload" data-url="<?=base_url('upload/image');?>">
 				</div>
 			</div>
 			<input type="hidden" name="image_temp" value=""> 
 		</div>
 		<div>
-		<h3 class="text-center">Tunjukkan Ekspresi kamu dari serunya pertandingan<br />
-		Persib VS Gamba Osaka di stadion Jalak Harupat Soreang - Bandung.<br />
+		<h3 class="text-center popupload">Tunjukkan Ekspresi kamu dari serunya pertandingan<br />
+		Persija VS Gamba Osaka di stadion Gelora Bung Karno - Jakarta.<br />
 		Setiap peserta boleh mengirimkan lebih dari 1 (satu) foto.</h3>
 		</div>	
 	</div>
 </div>
 </div>
 <div class="atas">
-	<p class="text-center">
+	<div class="text-center button-submit" style="display:none">
 		<button class="btn btn-primary btn-lg" role="button">KIRIM</button>
-	</p>
+	</div>
 </div>
 <?=form_close();?>
 </section>
