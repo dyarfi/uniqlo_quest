@@ -78,6 +78,12 @@ $(document).ready(function(){
 
       var plot1 = jQuery.jqplot('chart2',jsonurl,
         {
+		/*
+		  seriesColors: [ "#4bb2c5", "#c5b47f", "#EAA228", "#579575", "#839557", "#958c12",
+        "#953579", "#4b5de4", "#d8b83f", "#ff5800", "#0085cc"],  // colors that will
+         // be assigned to the series.  If there are more series than colors, colors
+         // will wrap around and start at the beginning again.
+		 */
             title: quest_text,
             dataRenderer: ajaxDataRenderer,            
             grid: {
@@ -86,12 +92,12 @@ $(document).ready(function(){
               background: '#ffffff',
               shadow:false
             },
-            seriesDefaults: {
+			seriesDefaults: {
               shadow: false,
               renderer: jQuery.jqplot.PieRenderer,
-              rendererOptions: { padding: 2, sliceMargin: 2, startAngle: -90, showDataLabels: true }
-            },
-            legend: { show:true, location: 'w', rowSpacing:2, placement:"outsideGrid", border:"0px",fontSize:'1.0em'},
+              rendererOptions: { padding: 2, sliceMargin: 2, startAngle: -90, showDataLabels: true},
+			},
+            legend: { show:true, location: 'w', rowSpacing:2, placement:"outsideGrid", border:"0px",fontSize:'1.0em'}
         }
       );
   }); 

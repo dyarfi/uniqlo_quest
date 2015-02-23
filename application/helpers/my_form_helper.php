@@ -1,4 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 if ( ! function_exists('create_slug'))
 {
 	function create_slug($string) {
@@ -89,6 +90,7 @@ if(! function_exists('get_image_admin'))
 		</div>
         </div>
 	   </div>
-		<?
+		<?php
 	}
 }
+?>

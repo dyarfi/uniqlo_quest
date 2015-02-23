@@ -98,19 +98,19 @@ class User_model extends CI_Model {
         }
     }
 
-	public function get_user ($id = null) {
-		if(!empty($id)){
-			$data = array();
-			$options = array('part_id' => $id);
-			$Q = $this->db->get_where('participant',$options,1);
-			if ($Q->num_rows() > 0){
-				foreach ($Q->result_object() as $row)
-				$data = $row;
-			}
-			$Q->free_result();
-			return $data;
-		}
-	}
+    public function get_user ($id = null) {
+	    if(!empty($id)){
+		    $data = array();
+		    $options = array('part_id' => $id);
+		    $Q = $this->db->get_where('participant',$options,1);
+		    if ($Q->num_rows() > 0){
+			    foreach ($Q->result_object() as $row)
+			    $data = $row;
+		    }
+		    $Q->free_result();
+		    return $data;
+	    }
+    }
 
     public function get_values_users () {
         $this->db->where('status', 1);
@@ -121,7 +121,15 @@ class User_model extends CI_Model {
         }
         return $data;
     }
-
+    
+    public function get_last_part_id() {
+	$sql = $this->db->query('SELECT MAX(`part_id`) + 1 as `last_id` FROM `tbl_participant`');
+	foreach ($sql->result() as $row) {
+	   $last_id = $row->last_id;
+	}
+	return $last_id;
+    }
+    
     public function check_fb_user($fb_id) {
         $this->db->where('fb_id', $fb_id);
         return $this->db->get('participant')->row();

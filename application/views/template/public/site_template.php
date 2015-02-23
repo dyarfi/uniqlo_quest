@@ -55,6 +55,8 @@
 	
 	<script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.json2.min.js"></script>
 	
+	<script type="text/javascript" src="<?=base_url();?>assets/public/js/circle-progress.js"></script>
+	
 	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.pointLabels.min.js"></script-->
 	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.categoryAxisRenderer.min.js"></script-->
 	<!--script type="text/javascript" src="<?=base_url();?>assets/public/js/jquery.jqplot.1.0.4/plugins/jqplot.canvasAxisTickRenderer.min.js"></script-->
